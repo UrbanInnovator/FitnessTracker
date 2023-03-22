@@ -3,9 +3,11 @@
 const {
   client,
   createUser,
+  createActivity,
   createRoutine,
   getAllActivities,
-  getRoutinesWithoutActivities
+  getRoutinesWithoutActivities,
+  addActivityToRoutine
 } = require("./client")
 
 async function dropTables() {
