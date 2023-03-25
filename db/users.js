@@ -16,6 +16,7 @@ async function createUser({ username, password }) {
     ON CONFLICT (username) DO NOTHING
     RETURNING *;
     `, [username, hashedPassword]);
+    
     return user;
   } catch (error) {
     console.log(error);
