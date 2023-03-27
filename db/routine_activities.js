@@ -19,9 +19,35 @@ async function addActivityToRoutine({
   }
 }
 
-async function getRoutineActivityById(id) {}
+async function getRoutineActivityById(id) {
+  try {
+    const { rows: [ routineActivity ] } = await client.query(`
+    SELECT * 
+    FROM routine_activities
+    WHERE id = ${id}
+    RETURNING *;
+    `);
+    
+    return routineActivity;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-async function getRoutineActivitiesByRoutine({ id }) {}
+async function getRoutineActivitiesByRoutine({ id }) {
+  try {
+    const { rows: [ routineActivities ] } = await client.query(`
+    SELECT * 
+    FROM routine_activities
+    WHERE "routineId" = ${id}
+    RETURNING *;
+    `);
+    
+    return routineActivities;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function updateRoutineActivity({ id, ...fields }) {}
 

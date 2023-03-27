@@ -29,15 +29,41 @@ const user = await getUserByUsername(username);
  
 const hashedPassword = user.password;
 
-const isVaild = await bcrypt.compare(password, hashedPassword)
+const isValid = await bcrypt.compare(password, hashedPassword)
+  if (isValid) {
+    return user;
+  } else {
+    console.error("Password invalid!");
+  }
 }
 
 async function getUserById(userId) {
-
+  try {
+    const { rows: [ user ] } = await client.query(`
+    SELECT *
+    FROM users
+    WHERE id = ${userId}
+    `)
+    
+    delete user.password;
+    return user;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function getUserByUsername(userName) {
-
+  try {
+    const { rows: [ user ] } = await client.query(`
+    SELECT *
+    FROM users
+    WHERE username = ${userName}
+    `)
+    
+    return user;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 module.exports = {

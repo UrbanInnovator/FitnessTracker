@@ -29,12 +29,38 @@ async function getAllActivities() {
   }
 }
 
-async function getActivityById(id) {}
+async function getActivityById(id) {
+  try {
+    const { rows: [ activity ] } = await client.query(`
+    SELECT * 
+    FROM activities
+    WHERE id = ${id}
+    `);
+    
+    return activity;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-async function getActivityByName(name) {}
+async function getActivityByName(name) {
+  try {
+    const { rows: [ activity ] } = await client.query(`
+    SELECT * 
+    FROM activities
+    WHERE name = ${name}
+    `);
+    
+    return activity;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 // used as a helper inside db/routines.js
-async function attachActivitiesToRoutines(routines) {}
+async function attachActivitiesToRoutines(routines) {
+
+}
 
 async function updateActivity({ id, ...fields }) {
   // don't try to update the id
