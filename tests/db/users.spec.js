@@ -6,7 +6,7 @@ DO NOT CHANGE THIS FILE
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 const faker = require("faker");
-const client = require("../../db/client");
+const { client } = require("../../db/client");
 const {
   getUserById,
   createUser,
