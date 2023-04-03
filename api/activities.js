@@ -5,6 +5,7 @@ const router = express.Router();
 
 // GET /api/activities
 
+
 // POST /api/activities
 
 // PATCH /api/activities/:activityId
