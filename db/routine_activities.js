@@ -48,6 +48,21 @@ async function getRoutineActivitiesByRoutine({ id }) {
   }
 }
 
+const checkRoutineActivity = async (routId, actId) => {
+  try {
+    const { rows: [ routineActivity ] } = await client.query(`
+    SELECT *
+    FROM routine_activities
+    WHERE "routineId" = $1
+    AND "activityId" = $2
+  `, [routId, actId]);
+
+  return routineActivity;
+  }catch(error){
+    console.log(error)
+  }
+}
+
 async function updateRoutineActivity({ id, ...fields }) {
   const setString = Object.keys(fields).map(
     (key, index) => `"${ key }"=$${ index + 1 }`
@@ -103,4 +118,5 @@ module.exports = {
   updateRoutineActivity,
   destroyRoutineActivity,
   canEditRoutineActivity,
+  checkRoutineActivity
 };

@@ -59,7 +59,6 @@ async function getAllRoutines() {
     
     const routinesWithActivities = await attachActivitiesToRoutines(routines);
     
-    console.log('ROUTINE', routinesWithActivities);
     
    return routinesWithActivities;
   }catch(error){
