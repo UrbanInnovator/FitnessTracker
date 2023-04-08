@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 
 // GET /api/health
@@ -7,6 +8,16 @@ router.get('/health', async (req, res, next) => {
         "message": "All Gucci!"
     });
 });
+
+// GET /api/
+router.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '../index.html')))
+
+router.use('/dist', express.static(path.join(__dirname, '../dist')));
+
+// 404 Handler
+// router.use('*', (req, res, next) => {
+//     res.status(404).send({error: 'route not found'});
+// });
 
 // ROUTER: /api/users
 const usersRouter = require('./users');
