@@ -1,14 +1,7 @@
 const express = require('express');
 const { 
-    getAllRoutines,
-    createRoutine,
-    updateRoutine,
     getUserById,
-    getUserByUsername,
     getRoutineById,
-    destroyRoutine,
-    addActivityToRoutine,
-    checkRoutineActivity,
     updateRoutineActivity,
     getRoutineActivityById,
     destroyRoutineActivity
@@ -16,12 +9,8 @@ const {
  const jwt = require("jsonwebtoken");
 const { JWT_SECRET = "neverTell" } = process.env;
 const { 
-    UserTakenError,
-    PasswordTooShortError,
-    UnauthorizedError,
     UnauthorizedUpdateError,
-    UnauthorizedDeleteError,
-    DuplicateRoutineActivityError
+    UnauthorizedDeleteError
  } = require('../errors.js');
 const router = express.Router();
 
