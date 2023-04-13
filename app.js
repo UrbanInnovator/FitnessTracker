@@ -1,10 +1,15 @@
 require("dotenv").config()
 const express = require("express");
 const { client } = require("./db/client");
+const path = require('path');
 const app = express()
 
 // Setup your Middleware and API Router here
 client.connect();
+
+app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, 'index.html')))
+
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 const morgan = require('morgan');
 app.use(morgan('dev'));
