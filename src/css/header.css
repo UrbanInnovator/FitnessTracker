@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat');
 
 #headbox {
-  display:flexbox;
+  display:flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: #00377A;
-  width:max-content;
+  width:100%;
   height:auto;
   margin:0px;
 }
@@ -14,6 +15,7 @@
 #topper {
   margin:8px;
   color:lightgray;
+  font-size: 22px;
 }
 
 #headline {
@@ -23,17 +25,25 @@
 
 #mottoline {
   margin:5px;
-  font-family: 'Damion';
+  font-family: '';
 }
 
 #navbar {
   float: right;
-  display: flexbox;
-  margin:8px;
+  display: flex;
+  flex-direction: row;
+  margin:20px;
+  font-family:'Caveat';
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .navs {
-  border: solid 1.7px lightgrey;
-  border-radius: 15px;
+  border: solid 3px lightgrey;
+  border-radius: 8px;
+  text-decoration: none;
+  color: lightgrey;
+  padding: 10px;
+  margin: 8px;
 }
 
