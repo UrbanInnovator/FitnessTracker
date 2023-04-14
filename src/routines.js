@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import './css/routines.css';
 
 const AllRoutines = () => {
   const [routines, setRoutines] = useState([]);
@@ -20,12 +21,14 @@ const AllRoutines = () => {
   console.log("ROUTINES", routines);
 
   return(
-    <div>
+    <div id='routinebox'>
       {
         routines.map((routine, index) => {
           return (
-            <div className="routine" key={index}>
-              <h3>{routine.name}</h3>
+            <div className='routine' key={index}>
+              <h3 className='main'>{routine.name}</h3>
+              <h4 className='details'> ID:{routine.id} | Made By:{routine.creatorName}</h4>
+              <p className='main'>{routine.goal}</p>
             </div>
           )
         })

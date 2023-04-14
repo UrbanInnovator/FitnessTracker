@@ -13,8 +13,6 @@ const {
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET = "neverTell" } = process.env;
 const { 
-    UserTakenError,
-    PasswordTooShortError,
     UnauthorizedError,
     UnauthorizedUpdateError,
     UnauthorizedDeleteError,

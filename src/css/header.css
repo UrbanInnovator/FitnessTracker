@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Damion');
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+
+#headbox {
+  display:flexbox;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #00377A;
+  width:max-content;
+  height:auto;
+  margin:0px;
+}
+
+#topper {
+  margin:8px;
+  color:lightgray;
+}
+
+#headline {
+  margin:5px;
+  font-family: 'Damion';
+}
+
+#mottoline {
+  margin:5px;
+  font-family: 'Damion';
+}
+
+#navbar {
+  float: right;
+  display: flexbox;
+  margin:8px;
+}
+
+.navs {
+  border: solid 1.7px lightgrey;
+  border-radius: 15px;
+}
+

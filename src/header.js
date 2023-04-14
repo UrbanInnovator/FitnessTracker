@@ -1,25 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouseChimneyWindow } from '@fortawesome/free-solid-svg-icons';
+import './css/header.css';
 
-const Header = () => {
+const Header = (props) => {
 
   return (
     <>
-      <header>
-        <h1 id="headline">Fitness Tracker</h1>
-        <h4 id="mottoline">"We show you how to be strong - IN THE REAL WAY!"</h4>
-      </header>
-      <div>
-        <Link to='/' className="navs">Home</Link>
-        <Link to='/routines' className="navs">Routines</Link>
-        <Link to='/activities' className="navs">Activities</Link>
-        {/* {
-          props.isLoggedIn ?
-          <>
-            <Link to='/users/:userId/routine' class="navs">My Routines</Link>
-          </>
-          : null
-        } */}
+      <div id='headbox'>
+        <header id="topper">
+          <h1 id="headline">Fitness Tracker</h1>
+          <h4 id="mottoline">"We show you how to be strong - IN THE REAL WAY!"</h4>
+        </header>
+        <div id="navbar">
+          <Link to='/' className="navs"><FontAwesomeIcon icon={faHouseChimneyWindow} /></Link>
+          <Link to='/routines' className="navs">Routines</Link>
+          <Link to='/activities' className="navs">Activities</Link>
+          {
+            props.isLoggedIn ?
+            <>
+              <Link to='/my-routines' className="navs">My Routines</Link>
+              <button className="navs" onClick={Logout()}>Logout</button>
+            </>
+            : 
+            <Link to='/login' className="navs">Login</Link>
+          }
+        </div>
       </div>
     </>
   )
