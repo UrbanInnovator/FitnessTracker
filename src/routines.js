@@ -24,11 +24,24 @@ const AllRoutines = () => {
     <div id='routinebox'>
       {
         routines.map((routine, index) => {
+          let activities = routine.activities;
           return (
             <div className='routine' key={index}>
-              <h3 className='main'>{routine.name}</h3>
+              <h3 className='main'>Routine: {routine.name}</h3>
               <h4 className='details'> ID:{routine.id} | Made By:{routine.creatorName}</h4>
-              <p className='main'>{routine.goal}</p>
+              <p className='main'>Goal: {routine.goal}</p>
+                {
+                  activities.map((activity, index) => {
+                    return(
+                      <ul className="activity" key={index}>
+                        <h3 className='main'>Activity: {activity.name}</h3>
+                        <li className='actname'>Name: {activity.name}</li>
+                        <li className='duration'>Duration: {activity.duration} Count: {activity.count}</li>
+                        <li className='desription'>Description: {activity.description}</li>
+                      </ul>
+                    )
+                  })
+                }
             </div>
           )
         })
