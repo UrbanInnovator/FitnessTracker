@@ -6,7 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #00377A;
+  background-color: #7a95ee;
   width:100%;
   height:auto;
   margin:0px;
@@ -14,7 +14,7 @@
 
 #topper {
   margin:8px;
-  color:lightgray;
+  color:white;
   font-size: 22px;
 }
 
@@ -39,10 +39,10 @@
 }
 
 .navs {
-  border: solid 3px lightgrey;
+  border: solid 3px white;
   border-radius: 8px;
   text-decoration: none;
-  color: lightgrey;
+  color: white;
   padding: 10px;
   margin: 8px;
 }
