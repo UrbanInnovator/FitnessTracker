@@ -1,3 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Damion');
 @import url('https://fonts.googleapis.com/css?family=Caveat');
 @import url('https://fonts.googleapis.com/css?family=Delicious+Handrawn');
+
+#homemain{
+  padding-top: 8px;
+  width: 100%;
+}
+
+.demopic1{
+  width: 50%;
+  padding: 8px;
+}
+
+.demopic2{
+  width: 50%;
+  padding: 8px;
+}
+
+#blurbox{
+  display: flex;
+  flex-direction: column;
+}
+
+#demobox{
+  display: flex;
+  flex-direction: row;
+}
+
+#missionstate, #services{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#greeting{
+  text-align: center;
+  text-decoration: none;
+}
