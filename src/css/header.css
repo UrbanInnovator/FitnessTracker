@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #00377A;
+  background-color: #7a95ee;
   width:100%;
   height:auto;
   margin-bottom:15px;
@@ -17,8 +17,13 @@
 
 #topper {
   margin:8px;
+<<<<<<< HEAD
   color:lightgray;
   font-size: 25px;
+=======
+  color:white;
+  font-size: 22px;
+>>>>>>> 93dfed2863dd3eee5e1d451ef76334197a726b39
 }
 
 #headline {
@@ -47,10 +52,10 @@
 }
 
 .navs {
-  border: solid 3px lightgrey;
+  border: solid 3px white;
   border-radius: 8px;
   text-decoration: none;
-  color: lightgrey;
+  color: white;
   padding: 10px;
   margin: 8px;
 }
