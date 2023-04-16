@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import './css/home..css';
+import './css/home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,4 +44,3 @@ const Home = (props) => {
 
 export default Home;
 
-export default Home;
