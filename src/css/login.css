@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Damion');
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url('https://fonts.googleapis.com/css?family=Delicious+Handrawn');
+
+
+#logpage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 80px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 4.2px #7a95ee;
+  border-style: solid none solid none;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 10px;
+}
+.userpass{
+  border: 2px solid #7a95ee;
+  border-radius: 10px;
+  border-style: inset;
+  margin: 4px;
+  padding: 5px;
+}
+
+.logreg{
+  margin: 4px;
+  padding: 4px;
+  width: fit-content;
+  border: solid 1.2px #7a95ee;
+  color: #7a95ee;
+  border-radius: 8px;
+}
+
+
+.sublog{
+  margin: 4px;
+  border: none;
+  background-color: white;
+  font-family: 'Delicious Handrawn';
+  font-size: 25px;
+}
+
+.sublog:hover{
+  color: #7a95ee;
+}
