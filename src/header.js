@@ -11,7 +11,7 @@ const Header = (props) => {
       <div id='headbox'>
         <header id="topper">
           <h1 id="headline">Fitness Tracker</h1>
-          <h4 id="mottoline">"We show you how to be strong - IN THE REAL WAY!"</h4>
+          <h4 id="mottoline">Opportunities don't just happen, you create them!</h4>
         </header>
         <div id="navbar">
           <Link to='/' className="navs"><FontAwesomeIcon icon={faHouseChimneyWindow} /></Link>

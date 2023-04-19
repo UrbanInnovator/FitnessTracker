@@ -12,7 +12,6 @@
   background-color: #7a95ee;
   width:100%;
   height:auto;
-  margin-bottom:15px;
 }
 
 #topper {
@@ -41,7 +40,7 @@
   flex-direction: row;
   align-items: center;
   margin:20px;
-  font-family:'Caveat';
+  font-family:'Delicious Handrawn';
   font-size: 22px;
   font-weight: bold;
 }

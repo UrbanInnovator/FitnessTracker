@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import './css/home..css';
+import './css/home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -24,16 +24,17 @@ const Home = (props) => {
         </div>
         <div id="services">
           <h4>What We Provide</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a rhoncus tortor. Sed nec dui urna. Mauris facilisis scelerisque erat ut finibus. Cras fringilla mi ut porta aliquam. Nulla sodales tortor at pretium fringilla. Duis scelerisque tincidunt ipsum, sed congue neque suscipit eu. Maecenas pharetra imperdiet odio non posuere. Sed velit neque, sagittis a felis eget, tincidunt pretium velit. Donec ut dignissim sapien, sed egestas nisi. Pellentesque erat purus, commodo vel mattis et, convallis ut mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque sagittis fermentum rutrum. In sodales ornare est, pellentesque commodo ex lobortis nec. Etiam vitae justo id sem auctor accumsan. Pellentesque lobortis dapibus commodo. Curabitur pretium tincidunt facilisis.
-
-</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a rhoncus tortor. 
+            Sed nec dui urna. Mauris facilisis scelerisque erat ut finibus. Cras fringilla mi ut porta aliquam. 
+            Nulla sodales tortor at pretium fringilla. Duis scelerisque tincidunt ipsum, sed congue neque suscipit eu. 
+            Maecenas pharetra imperdiet odio non posuere. Sed velit neque, sagittis a felis eget, tincidunt pretium velit. 
+            Donec ut dignissim sapien, sed egestas nisi. Pellentesque erat purus, commodo vel mattis et, convallis ut mi. 
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque sagittis fermentum rutrum. 
+            In sodales ornare est, pellentesque commodo ex lobortis nec. Etiam vitae justo id sem auctor accumsan. Pellentesque lobortis dapibus commodo. 
+            Curabitur pretium tincidunt facilisis.</p>
         </div>
-          <p>Nam ac finibus sapien, non aliquet ex. Sed nisi eros, tincidunt at libero sed, congue lacinia ex. Suspendisse id urna viverra, mattis arcu eu, tempor tellus</p>
-          <p>Vestibulum euismod tortor ac neque dignissim, at malesuada nulla egestas. Nullam nec felis vel nibh finibus porta ut non neque. Nam bibendum sem elit, vitae dictum nulla semper at. Nullam consequat ac metus eget congue. </p>
-          <p>Proin auctor elit ac libero pellentesque, sit amet dictum nibh interdum.</p>
-        </div>
-        <h3 id="hypeline">Helping You the Best You!</h3>
-        <div id="reviews"></div>
+      </div>  
+      <h3 id="hypeline">Helping You the Best You!</h3>
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
@@ -41,7 +42,5 @@ const Home = (props) => {
     </div>
   )
 }
-
-export default Home;
 
 export default Home;
