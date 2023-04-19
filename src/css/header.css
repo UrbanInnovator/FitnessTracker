@@ -50,9 +50,13 @@
   border: solid 3px white;
   border-radius: 8px;
   text-decoration: none;
+  font-family:'Caveat';
+  font-size: 22px;
+  font-weight: bold;
   color: white;
   padding: 10px;
   margin: 8px;
+  background-color: #7a95ee;
 }
 
 .navs:hover {

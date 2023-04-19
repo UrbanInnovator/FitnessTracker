@@ -20,7 +20,9 @@ const router = express.Router();
 // POST /api/users/register
 router.post('/register', async(req, res, next) => {
     try{
+        console.log("REQ", req.body);
         const { username, password } = req.body;
+        const newUser = { username, password }
         const userCheck = await getUserByUsername(username);
         if(userCheck) {
             res.send({
@@ -35,7 +37,7 @@ router.post('/register', async(req, res, next) => {
                 "name": `PasswordTooShortError`
         })
         } else {
-            const user = await createUser(req.body);
+            const user = await createUser(newUser);
             const token = jwt.sign( 
                 { id: user.id, username: user.username }, 
                 JWT_SECRET, 
@@ -55,7 +57,8 @@ router.post('/register', async(req, res, next) => {
 // POST /api/users/login
 router.post('/login', async(req, res, next) => {
     try {
-        const user = await getUser(req.body);
+        console.log("REQ!", req.body);
+        const user = await getUser(req.body.user);
         const token = jwt.sign( 
             { id: user.id, username: user.username }, 
             JWT_SECRET, 

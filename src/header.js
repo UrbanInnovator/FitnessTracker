@@ -6,6 +6,11 @@ import './css/header.css';
 
 const Header = (props) => {
 
+  const Logout =() => {
+    localStorage.removeItem('token');
+    window.location.replace('/');
+  }
+
   return (
     <>
       <div id='headbox'>
@@ -21,7 +26,7 @@ const Header = (props) => {
             props.isLoggedIn ?
             <>
               <Link to='/my-routines' className="navs">My Routines</Link>
-              <button className="navs" onClick={Logout()}>Logout</button>
+              <button className="navs" onClick={Logout}>Logout</button>
             </>
             : 
             <Link to='/login' className="navs">Login</Link>

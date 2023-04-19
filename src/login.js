@@ -7,36 +7,62 @@ const Login = (props) => {
   const[logPassword, setLogPassword] = useState('');
   const[showLoginButton, setShowLoginButton] = useState(true)
 
-  const getUser = async() => {
+  const getUser = async(username, password) => {
     try {
-     const result = await Axios.get('/api/users/login');
-     window.localStorage.setItem('token');
-     props.setIsLoggedIn(true);
+     const result = await Axios.post('/api/users/login',
+     {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      user: {
+        username: username,
+        password: password
+      }
+    }
+    );
+    console.log("RESULT", result.data);
+     window.localStorage.setItem('token', `${result.data.token}`);
+     window.location.replace('/');
     }catch(error){
      console.log(error);
     }
   }
 
-  const onChangeUsername = (event) => {
-    console.log(event.target.value);
-    setLogUsername(event.target.value);
+  const registerUser = async (username, password) => {
+    console.log("LOG", username, password);
+   try {
+    const result = await Axios.post('/api/users/register',
+    {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+       
+        username: username,
+        password: password
+      
+    }
+    );
+    return result
+   } catch(error) {
+    console.log(error);
+   }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    console.log(form);
 
     if(form[3].name === "register") {
       const passConf = form[2].value;
-      if(passConf === props.passW) {
-        registerUser(props.userN, props.passW);
-        console.log(passConf, props.userN, props.passW);
+      if(passConf === logPassword) {
+        registerUser(logUsername, logPassword);
       } else {
         console.log("Passwords do not match");
       }
     } else if (form[2].name === 'login') {
-      logIn(props.userN, props.passW);
+      getUser(logUsername, logPassword);
       // Will have to edit all instances of setLoggedIn to work with token
       // this is only here to test while API is down
     }
@@ -49,9 +75,9 @@ const Login = (props) => {
     const value = e.target.value;
 
     if(name === 'username') {
-      props.setUserN(value);
+      setLogUsername(value);
     } else if (name === 'password') {
-      props.setPassW(value);
+      setLogPassword(value);
     }
     // console.log(props.userN, props.passW);
   }
@@ -62,8 +88,8 @@ const Login = (props) => {
           props.isLoggedIn ? <p id="logmessage">You're logged in man!</p> : null
         }
         <form onSubmit={handleSubmit}>
-          <input id="user" className="userpass" type="text" placeholder="Enter Username" min="5" maxLength="15" name="username" onChange={onChangeUsername} required></input>
-          <input id="pass" className="userpass" type="password" placeholder="Enter Password" min="8" maxLength="20" name="password" onChange={onChangePassword} required></input>
+          <input id="user" className="userpass" type="text" placeholder="Enter Username" min="5" maxLength="15" name="username" onChange={onChange} required></input>
+          <input id="pass" className="userpass" type="password" placeholder="Enter Password" min="8" maxLength="20" name="password" onChange={onChange} required></input>
           {
             showLoginButton ? 
               <>
