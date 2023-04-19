@@ -22,14 +22,39 @@ const Login = (props) => {
     setLogUsername(event.target.value);
   }
 
-  const onChangePassword =(event) => {
-    console.log(event.target.value);
-    setLogPassword(event.target.value);
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    console.log(form);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+    if(form[3].name === "register") {
+      const passConf = form[2].value;
+      if(passConf === props.passW) {
+        registerUser(props.userN, props.passW);
+        console.log(passConf, props.userN, props.passW);
+      } else {
+        console.log("Passwords do not match");
+      }
+    } else if (form[2].name === 'login') {
+      logIn(props.userN, props.passW);
+      // Will have to edit all instances of setLoggedIn to work with token
+      // this is only here to test while API is down
+    }
+    // console.log(props.isLoggedIn);
   };
+
+  const onChange = (e) => {
+    e.preventDefault();
+    const name = e.target.name;
+    const value = e.target.value;
+
+    if(name === 'username') {
+      props.setUserN(value);
+    } else if (name === 'password') {
+      props.setPassW(value);
+    }
+    // console.log(props.userN, props.passW);
+  }
 
   return (
     <div id="logpage">
@@ -37,7 +62,7 @@ const Login = (props) => {
           props.isLoggedIn ? <p id="logmessage">You're logged in man!</p> : null
         }
         <form onSubmit={handleSubmit}>
-          <input id="user" className="username" type="text" placeholder="Enter Username" min="5" maxLength="15" name="username" onChange={onChangeUsername} required></input>
+          <input id="user" className="userpass" type="text" placeholder="Enter Username" min="5" maxLength="15" name="username" onChange={onChangeUsername} required></input>
           <input id="pass" className="userpass" type="password" placeholder="Enter Password" min="8" maxLength="20" name="password" onChange={onChangePassword} required></input>
           {
             showLoginButton ? 
