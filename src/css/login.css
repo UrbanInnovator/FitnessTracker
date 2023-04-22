@@ -39,6 +39,10 @@ form{
   border-radius: 8px;
 }
 
+.logreg:hover {
+  background-color: #7a95ee;
+  color:white;
+}
 
 .sublog{
   margin: 4px;
