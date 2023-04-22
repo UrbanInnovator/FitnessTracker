@@ -20,7 +20,6 @@ const router = express.Router();
 // POST /api/users/register
 router.post('/register', async(req, res, next) => {
     try{
-        console.log("REQ", req.body);
         const { username, password } = req.body;
         const newUser = { username, password }
         const userCheck = await getUserByUsername(username);

@@ -21,7 +21,6 @@ const Login = (props) => {
       }
     }
     );
-    console.log("RESULT", result.data);
      window.localStorage.setItem('token', `${result.data.token}`);
      window.location.replace('/');
     }catch(error){
@@ -30,7 +29,6 @@ const Login = (props) => {
   }
 
   const registerUser = async (username, password) => {
-    console.log("LOG", username, password);
    try {
     const result = await Axios.post('/api/users/register',
     {
@@ -63,8 +61,6 @@ const Login = (props) => {
       }
     } else if (form[2].name === 'login') {
       getUser(logUsername, logPassword);
-      // Will have to edit all instances of setLoggedIn to work with token
-      // this is only here to test while API is down
     }
   };
 
@@ -86,7 +82,7 @@ const Login = (props) => {
         {
           props.isLoggedIn ? <p id="logmessage">You're logged in man!</p> : null
         }
-        <form onSubmit={handleSubmit}>
+        <form id="loginform" onSubmit={handleSubmit}>
           <input id="user" className="userpass" type="text" placeholder="Enter Username" min="5" maxLength="15" name="username" onChange={onChange} required></input>
           <input id="pass" className="userpass" type="password" placeholder="Enter Password" min="8" maxLength="20" name="password" onChange={onChange} required></input>
           {
