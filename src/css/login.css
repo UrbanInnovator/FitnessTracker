@@ -12,13 +12,13 @@
   padding: 80px;
 }
 
-form{
+#loginform{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 4.2px #7a95ee;
   border-style: solid none solid none;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 40px;
   margin: 10px;
 }
