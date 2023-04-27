@@ -33,7 +33,8 @@ router.get('/', async(req, res, next) => {
 // POST /api/routines
 router.post('/', async(req, res, next) => {
     try {
-        const authHeader = req.headers['authorization'];
+        const authHeader = req.headers.authorization;
+        console.log("AUTH", authHeader, "REQH", req.headers);
         if(!authHeader) {
             const unAuth = UnauthorizedError();
             res.status(401).send({

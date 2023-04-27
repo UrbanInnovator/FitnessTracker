@@ -22,6 +22,7 @@ const Login = (props) => {
     }
     );
      window.localStorage.setItem('token', `${result.data.token}`);
+     window.localStorage.setItem('username', `${result.data.user.username}`);
      window.location.replace('/');
     }catch(error){
      console.log(error);

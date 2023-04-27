@@ -110,12 +110,11 @@ router.get('/:username/routines', async(req, res, next) => {
         const user = await getUserByUsername(username);
         if(user.username != me.username) {
             const publicRoutines = await getPublicRoutinesByUser(user);
-            console.log(publicRoutines);
             res.send(publicRoutines);
         } else if(me.username === user.username) {
             const allRoutines = await getAllRoutinesByUser(me);
-            console.log(allRoutines);
             res.send(allRoutines);
+            console.log('all', allRoutines);
         }
     } catch(error) {
         next(error);

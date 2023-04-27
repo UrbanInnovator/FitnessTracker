@@ -37,7 +37,7 @@
   border-radius: 10px;
   border-style: inset;
   margin: 4px;
-  padding: 5px;;
+  padding: 5px;
 }
 
 .subact{
@@ -49,11 +49,18 @@
   border-radius: 8px;
 }
 
+.subact:hover {
+  background-color: #7a95ee;
+  color:white;
+  border: solid 1.2px white;
+}
+
 #activitybox{
   display:flex;
   flex-direction:row;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding:60px;
 }
 .activityform{
   border: solid 4.2px #7a95ee;

@@ -1,0 +1,84 @@
+.routinebox {
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding:60px;
+}
+
+.routineform {
+  border: 4.2px #7a95ee;
+  border-style: solid none solid none;
+  width: 300px;
+  border-radius:20px;
+  height: fit-content;
+  padding: 20px;
+  display:flex;
+  margin: 8px;
+  flex-direction: column;
+  align-items: left;
+  text-align: center;
+  justify-content: space-around;
+  font-family: 'Delicious Handrawn';
+}
+
+#routlabel {
+  font-size: 25px;
+  font-weight:200;
+}
+
+.routinput {
+  border: 2px solid #7a95ee;
+  border-radius: 10px;
+  border-style: inset;
+  margin: 4px;
+  padding: 5px;
+}
+
+.butsub {
+  margin: 4px;
+  padding: 4px;
+  width: fit-content;
+  border: solid 1.2px #7a95ee;
+  color: #7a95ee;
+  border-radius: 8px;
+}
+
+.butsub:hover {
+  background-color: #7a95ee;
+  color:white;
+  border: solid 1.2px white;
+}
+
+.routineform label {
+  margin: 8px;
+  font-size: 20px;
+}
+
+#myroutie {
+  border: 4.2px #7a95ee solid;
+  width: 300px;
+  border-radius:20px;
+  height: fit-content;
+  padding: 20px;
+  display:flex;
+  margin: 8px;
+  flex-direction: column;
+  align-items: left;
+  text-align: center;
+  justify-content: space-around;
+  font-family: 'Delicious Handrawn';
+}
+
+#myroutie label {
+  margin: 8px;
+  font-size: 17px;
+}
+
+#pubpriv {
+  border: 2px solid #7a95ee;
+  border-radius: 10px;
+  border-style: inset;
+  margin: 4px;
+  padding: 5px;
+}
