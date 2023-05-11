@@ -86,7 +86,7 @@ const onChange = (e) => {
           <li className="description">Description; {activity.description}</li>
         </ul>
       )
-    }) : <div>Loading Activities</div>
+    }) : <div>No Activities yet! Be the first to add one!</div>
     
     }
     

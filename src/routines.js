@@ -23,6 +23,7 @@ const AllRoutines = () => {
   return(
     <div id='routinebox'>
       {
+        routines ?
         routines.map((routine, index) => {
           let activities = routine.activities;
           return (
@@ -44,7 +45,7 @@ const AllRoutines = () => {
                 }
             </div>
           )
-        })
+        }) : <div>No Routines yet! Be the first to add one!</div>
       }
     </div>
   )
